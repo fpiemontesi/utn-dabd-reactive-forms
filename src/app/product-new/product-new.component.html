@@ -1,0 +1,28 @@
+<form [formGroup]="form">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+        <input formControlName="name" type="text" class="form-control">
+        <p *ngIf="form.controls['name'].invalid && form.controls['name'].touched" 
+            style="color: red;">
+            Nombre requerida
+        </p>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Categoria</label>
+        <input formControlName="category" type="text" class="form-control">
+        <!-- <p *ngIf="categoryControl.invalid && categoryControl.touched" 
+            style="color: red;">
+            Categoria requerida
+        </p> -->
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Url</label>
+        <input formControlName="url" type="text" class="form-control">
+    </div>
+</form>
+
+
+TEMPLATE DRIVEN: {{ product | json }}
+<br />
+REACTIVE FORMS: {{ form.value | json }}
+<!-- REACTIVE FORMS: {{ categoryControl.value | json }} -->
